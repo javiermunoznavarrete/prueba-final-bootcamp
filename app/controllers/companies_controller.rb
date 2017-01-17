@@ -25,6 +25,7 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.new(company_params)
+    @company.users << current_user 
 
     respond_to do |format|
       if @company.save
@@ -69,6 +70,6 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:nme, :address, :latitude, :longitude, :user_id)
+      params.require(:company).permit(:nme, :address, :latitude, :longitude)
     end
 end

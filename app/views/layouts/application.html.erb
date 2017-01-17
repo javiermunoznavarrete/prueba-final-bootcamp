@@ -9,7 +9,12 @@
   </head>
 
   <body>
-  	<%= link_to 'login', new_user_session_url %>
+    <% if user_signed_in? %>
+   		<%= link_to "edit user", edit_user_registration_path(@user) %> 
+    <% else %>
+          <li><a href="<%= new_user_session_path %>"> Login </a></li>
+          <li><a href="<%= new_user_registration_path %>"> Registro </a></li>
+    <% end -%>
     <%= yield %>
   </body>
 </html>
