@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Page in heroku
+http://tranquil-mountain-30332.herokuapp.com
